@@ -1,0 +1,29 @@
+{
+  "name": "caradisiac",
+  "version": "1.0.0",
+  "description": "> Drive comfortably",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "elasticsearch": "^14.2.0",
+    "node-car-api": "github:92bondstreet/node-car-api",
+    "p-map": "^1.2.0",
+    "p-reflect": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LemaitreC/caradisiac.git"
+  },
+  "author": "Corentin Lemaitre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LemaitreC/caradisiac/issues"
+  },
+  "homepage": "https://github.com/LemaitreC/caradisiac#readme"
+}
