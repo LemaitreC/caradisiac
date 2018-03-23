@@ -10,7 +10,8 @@
     "elasticsearch": "^14.2.0",
     "node-car-api": "github:92bondstreet/node-car-api",
     "p-map": "^1.2.0",
-    "p-reflect": "^1.0.0"
+    "p-reflect": "^1.0.0",
+    "restify": "^7.0.0"
   },
   "devDependencies": {},
   "scripts": {
