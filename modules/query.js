@@ -21,11 +21,8 @@ client.ping({
 client.search({
   index: 'cars',
   type: 'car',
-  body: {
-    query: {
-      match: {}
-    }
-  }
+  sort:"volume:desc",
+  size:500
 }).then(function (body) {
   var hits = body.hits.hits;
   callback(null, hits)
