@@ -1,4 +1,5 @@
 const populate = require('./modules/populate')
+const query = require('./modules/query')
 const restify = require('restify')
 const server = restify.createServer()
 
@@ -29,7 +30,20 @@ server.get('/populate', function(req, res) {
 	})
 })
 
-
+server.get('/suv', function(req, res) {
+	query.getSuv( (err, response) => {
+		res.setHeader('content-type', 'application/json')
+		res.setHeader('accepts', 'GET')
+		if (err) {
+			res.send(status.badRequest, {
+				error: err.message
+			})
+		} else {
+			res.send(status.ok, response)
+		}
+		res.end()
+	})
+})
 
 const port = process.env.PORT || defaultPort
 
