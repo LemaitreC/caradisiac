@@ -18,11 +18,19 @@ exports.addCars = callback =>{
     const r = res.filter(x => x.isRejected).map(x => x.value);
     let models=[]
 
+
     for(var i=0 ; i<results.length;i++){
       for(var j = 0 ; j<results[i].length; j++){
+        if(parseInt(results[i][j].volume)) {
+          results[i][j].volume = parseInt(results[i][j].volume)
+        }
+        else{
+          results[i][j].volume = 0
+        }
         models.push(results[i][j])
       }
     }
+
     return elasticsearchBulk(models)
   }).then(()=>{
      callback(null,"The models were inserted properly")
