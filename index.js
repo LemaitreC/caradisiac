@@ -13,7 +13,7 @@ const status = {
 	'notFound': 404
 }
 
-const defaultPort = 8081
+const defaultPort = 9292
 
 server.get('/populate', function(req, res) {
 	populate.addCars( (err, response) => {
