@@ -9,7 +9,7 @@ exports.addCars = callback =>{
   getBrands().then(res=>{
    let promises=[]
 
-   for(var i=0;i<5;i++){
+   for(var i=0;i<res.length;i++){
      promises.push(getModels(res[i]))
    }
   return pMap(promises, pReflect,{concurrency:2})
