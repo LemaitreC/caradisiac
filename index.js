@@ -16,9 +16,17 @@ function index(){
   //  console.log("Test")
   return pMap(promises, pReflect,{concurrency:2})
   }).then(res=>{
-    const f = res.filter(x => x.isFulfilled).map(x => x.value);
+    const results = res.filter(x => x.isFulfilled).map(x => x.value);
     const r = res.filter(x => x.isRejected).map(x => x.value);
-    console.log(f)
+    let brand=[]
+
+    for(var i=0 ; i<results.length;i++){
+      for(var j = 0 ; j<results[i].length; j++){
+        brand.push(results[i][j])
+      }
+    }
+
+    console.log(brand)
     console.log("rejected :" +r.length)
   }).catch(err=>{
     console.log(err)
